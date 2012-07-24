@@ -1,10 +1,7 @@
-/*
- * (C)opyright 2012 ssb Software Service und Beratung GmbH
- */
 package info.marcojahn.jsbfilegen;
 
 /**
- * @author Marco Jahn <marco.jahn@prodyna.de>
+ * @author Marco Jahn <marco.jahn@gmail.com>
  * 
  */
 public class JsbFileGen {
