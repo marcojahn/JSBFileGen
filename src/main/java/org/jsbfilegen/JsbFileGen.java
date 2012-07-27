@@ -1,4 +1,4 @@
-package info.marcojahn.jsbfilegen;
+package org.jsbfilegen;
 
 /**
  * @author Marco Jahn <marco.jahn@gmail.com>
