@@ -15,37 +15,37 @@ JSB file generator für ExtJS 4
 * find/parse "requires: []"
 
 ## 2. parse js file
- a. define -> index of file
- b. extend: ''
- c. mixins: {key: "index of file"}
- d. models: [] // path is relative for app
- e. stores: [] // path is relative for app
- f. views: [] // path is relative for app
- g. requires: [] // path is full qualified
+* define -> index of file
+* extend: ''
+* mixins: {key: "index of file"}
+* models: [] // path is relative for app
+* stores: [] // path is relative for app
+* views: [] // path is relative for app
+* requires: [] // path is full qualified
 
 ## 3. parse model file (identified by Ext.define() name)
-3.a. hasOne: ''
-3.b. hasMany: ''
-3.c. associations: []
-3.c.1. model: '' // path is full qualified (???)
-3.c.2. storeName: '' // path is relative
+* hasOne: ''
+* hasMany: ''
+* associations: []
+** model: '' // path is full qualified (???)
+** storeName: '' // path is relative
 
 ## 4. parse view file
-4.a. alias -> needed for detecting already loaded Ext.widget calls (see Always)
+* alias -> needed for detecting already loaded Ext.widget calls (see Always)
     
     
 ## N. Always try to find "app/index.html"
-N.a. find/parse <script type="text/javascript" src"..."></script"
-N.b. parse all files not already found (should find configs, etc)
-N.c. prepend (!) to map
+* find/parse <script type="text/javascript" src"..."></script"
+* parse all files not already found (should find configs, etc)
+* prepend (!) to map
 
 ## Always.
-Always.a. if commented out ignore (!) don't use
-Always.b. find/parse "Ext.create()"
-Always.c. find/parse "Ext.widget"
-Always.d. find/parse "Ext.require()"
-Always.e. find/parse alternate classnames
-Always.?. more aliases
+* if commented out ignore (!) don't use
+* find/parse "Ext.create()"
+* find/parse "Ext.widget"
+* find/parse "Ext.require()"
+* find/parse alternate classnames
+* more aliases
 
 Result
 ------
