@@ -50,17 +50,17 @@ JSB file generator für ExtJS 4
 Result
 ------
 1. Flat (?) map of required files containing (log file bamboo compatible ?)
-    a. location
-    b. existing
-    c. js object
-    d. several mapping/find parameter (widget)
-    e. file is used ? (list found but not used files)
+    - location
+    - existing
+    - js object
+    - several mapping/find parameter (widget)
+    - file is used ? (list found but not used files)
 
 2. Production ready file
-    a. Either
-        1. JSB3 file usable by sencha tools
-        3. replace all scripts tags in index.html with production file
-    b. Or
-        1. concat files in parsed/found order
-        2. Minify using YUI Compressor
-        3. replace all scripts tags in index.html with production file
+    - Either
+        * JSB3 file usable by sencha tools
+        * replace all scripts tags in index.html with production file
+    - Or
+        * concat files in parsed/found order
+        * Minify using YUI Compressor
+        * replace all scripts tags in index.html with production file
