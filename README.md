@@ -11,8 +11,8 @@ JSB file generator für ExtJS 4
 - config file with mapping of package to filepath
 
 ## 1. find "app.js" in root
- a. find/parse "controllers: []"
- b. find/parse "requires: []"
+* find/parse "controllers: []"
+* find/parse "requires: []"
 
 ## 2. parse js file
  a. define -> index of file
