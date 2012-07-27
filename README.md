@@ -35,7 +35,7 @@ JSB file generator für ExtJS 4
     
     
 ## N. Always try to find "app/index.html"
-* find/parse <script type="text/javascript" src"..."></script"
+* find/parse html script tags
 * parse all files not already found (should find configs, etc)
 * prepend (!) to map
 
