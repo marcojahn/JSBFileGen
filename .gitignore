@@ -3,6 +3,9 @@
 # folders
 /target
 
+# local files
+*.cmd
+
 # Package Files #
 #*.jar
 *.war
