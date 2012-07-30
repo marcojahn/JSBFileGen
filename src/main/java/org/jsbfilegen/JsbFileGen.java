@@ -1,17 +1,33 @@
+/*
+ * (C)opyright 2012 ssb Software Service und Beratung GmbH
+ */
 package org.jsbfilegen;
 
-/**
- * @author Marco Jahn <marco.jahn@gmail.com>
- * 
- */
-public class JsbFileGen {
+import java.util.List;
 
-    /**
-     * @param args
-     */
+import org.jsbfilegen.parser.JSFileParser;
+
+/**
+ * 
+ * 
+ * @author Nicolas Moser <nicolas.moser@prodyna.de>
+ * @author Marco Jahn <marco.jahn@prodyna.de>
+ */
+public class JSBFileGen {
+
     public static void main(String[] args) {
 
-        System.out.println("running JsbFileGen");
+        final JSBFileGenOptions options = new JSBFileGenOptions();
+        options.setProject("EPlanung");
+        options.setSourceLocation("../EPlanung/src/main");
+        options.setNameSpace("disoweb.apvertrieb.webclient.eplanung");
 
+        JSFileParser parser = new JSFileParser(options);
+
+        List<JSFileInfo> infos = parser.parse();
+        for (JSFileInfo info : infos) {
+            System.out.println(info);
+        }
     }
+
 }

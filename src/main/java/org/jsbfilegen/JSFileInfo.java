@@ -1,15 +1,15 @@
 /*
  * (C)opyright 2012 ssb Software Service und Beratung GmbH
  */
-package org.blub;
+package org.jsbfilegen;
 
-import org.blub.parser.file.JSFile;
+import org.jsbfilegen.parser.file.JSFile;
 
 /**
  * 
  * 
  * @author Nicolas Moser <nicolas.moser@prodyna.de>
- * 
+ * @author Marco Jahn <marco.jahn@prodyna.de>
  */
 public class JSFileInfo {
 

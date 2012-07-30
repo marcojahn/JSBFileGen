@@ -1,7 +1,7 @@
 /*
  * (C)opyright 2012 ssb Software Service und Beratung GmbH
  */
-package org.blub.parser;
+package org.jsbfilegen.parser;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,16 +17,16 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.blub.JSBFileGenOptions;
-import org.blub.JSFileInfo;
-import org.blub.parser.file.JSFile;
-import org.blub.parser.file.JSFileCollector;
+import org.jsbfilegen.JSBFileGenOptions;
+import org.jsbfilegen.JSFileInfo;
+import org.jsbfilegen.parser.file.JSFile;
+import org.jsbfilegen.parser.file.JSFileCollector;
 
 /**
  * 
  * 
  * @author Nicolas Moser <nicolas.moser@prodyna.de>
- * 
+ * @author Marco Jahn <marco.jahn@prodyna.de>
  */
 public class JSFileParser {
 

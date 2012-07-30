@@ -1,7 +1,7 @@
 /*
  * (C)opyright 2012 ssb Software Service und Beratung GmbH
  */
-package org.blub.parser.file;
+package org.jsbfilegen.parser.file;
 
 import java.io.File;
 import java.io.FileFilter;
