@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="info.marcojahn.jsbfilegen" basedir="../" default="main">
+<project name="org.jsbfilegen" basedir="../" default="main">
 
 	<property name="src.dir" value="src/main/java" />
 	<property name="target.dir" value="target" />
 	<property name="classes.dir" value="${target.dir}/classes" />
 	<property name="jar.dir" value="${target.dir}/jar" />
+	<property name="lib.dir" value="lib" />
 
-	<property name="classname" value="JsbFileGen" />
-	<property name="main-class" value="info.marcojahn.jsbfilegen.${classname}" />
+	<property name="classname" value="JSBFileGen" />
+	<property name="main-class" value="org.jsbfilegen.${classname}" />
 
 	<target name="main" depends="clean,jar" />
 	<!--<target name="clean-build" depends="clean,jar" />-->
@@ -23,12 +24,15 @@
 			<manifest>
 				<attribute name="Main-Class" value="${main-class}" />
 			</manifest>
+			<zipgroupfileset dir="${lib.dir}/" includes="**/*.jar" />
 		</jar>
 	</target>
 
 	<target name="compile">
 		<mkdir dir="${classes.dir}" />
-		<javac srcdir="${src.dir}" destdir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+			<classpath location="${lib.dir}/jargs.jar" />
+			</javac>
 	</target>
 
 </project>
