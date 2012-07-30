@@ -22,29 +22,13 @@ public class JSBFileGen {
     public static void main(String[] args) {
 
         CmdLineParser cmdLineParser = new CmdLineParser();
+        CmdLineParser.Option cmdHelpOption = cmdLineParser.addBooleanOption('h', "help");
+        CmdLineParser.Option cmdProjectNameOption = cmdLineParser.addStringOption("projectname");
+        CmdLineParser.Option cmdSrcPathOption = cmdLineParser.addStringOption('s', "sourcepath");
+        CmdLineParser.Option cmdModuleNameOption = cmdLineParser.addStringOption("module");
 
         try {
             cmdLineParser.parse(args);
-            CmdLineParser.Option helpOpt = cmdLineParser.addBooleanOption('h', "help");
-
-            Boolean help = (Boolean) cmdLineParser.getOptionValue(helpOpt);
-            if (help != null && help.booleanValue()) {
-                usage();
-                System.exit(0);
-            }
-
-            final JSBFileGenOptions options = new JSBFileGenOptions();
-            options.setProject("EPlanung");
-            options.setSourceLocation("../EPlanung/src/main");
-            options.setNameSpace("disoweb.apvertrieb.webclient.eplanung");
-
-            JSFileParser parser = new JSFileParser(options);
-
-            List<JSFileInfo> infos = parser.parse();
-            for (JSFileInfo info : infos) {
-                System.out.println(info);
-            }
-
         } catch (IllegalOptionValueException e) {
             e.printStackTrace();
             usage();
@@ -53,6 +37,34 @@ public class JSBFileGen {
             e.printStackTrace();
             usage();
             System.exit(1);
+        }
+
+        Boolean help = (Boolean) cmdLineParser.getOptionValue(cmdHelpOption);
+        if (help != null && help.booleanValue()) {
+            usage();
+            System.exit(0);
+        }
+
+        String srcPath = (String) cmdLineParser.getOptionValue(cmdSrcPathOption);
+        if (srcPath == null) {
+            System.err.println("[ERROR] No path specified {" + srcPath + "}");
+            usage();
+            System.exit(2);
+        }
+
+        String projectName = (String) cmdLineParser.getOptionValue(cmdProjectNameOption);
+        String moduleName = (String) cmdLineParser.getOptionValue(cmdModuleNameOption);
+
+        final JSBFileGenOptions options = new JSBFileGenOptions();
+        options.setProject(projectName);
+        options.setSourceLocation(srcPath);
+        options.setNameSpace("disoweb.apvertrieb.webclient." + moduleName);
+
+        JSFileParser parser = new JSFileParser(options);
+
+        List<JSFileInfo> infos = parser.parse();
+        for (JSFileInfo info : infos) {
+            System.out.println(info);
         }
 
     }
