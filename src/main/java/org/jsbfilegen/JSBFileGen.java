@@ -73,6 +73,8 @@ public class JSBFileGen {
 
         System.err.println("\nUsage: java -jar JSBFileGen.jar [options]\n\n" +
 
-        "Global Options\n" + "  -h, --help                 Displays this information\n");
+        "Global Options\n" + "  -h, --help                 Displays this information\n"
+                + "  -s, --sourcepath           Path to JavaScript source files\n"
+                + "  --projectname              Project name\n" + "  --module                  Module name\n");
     }
 }
